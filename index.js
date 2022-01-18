@@ -1,7 +1,9 @@
-import express from "express";
+const express=require("express")
+require('./db/Connection')
 
 const app=express();
 const port = 3000;
+
 
 
 
