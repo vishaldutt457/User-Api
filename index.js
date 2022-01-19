@@ -1,13 +1,13 @@
 const express=require("express")
+const app=express();
+const router=require("./routers/route")
 require('./db/Connection')
 
-const app=express();
+
+app.use(express.json());
+
 const port = 3000;
 
+app.use(router);
 
-
-
-app.use('/',(req,res)=>{
-    res.send("hello")
-})
 app.listen(port,()=>console.log(`Listening on localhost:${port}`))
