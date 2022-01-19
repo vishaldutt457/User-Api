@@ -20,8 +20,8 @@ const userSchema= new mongoose.Schema({
     years:{
         type:Number,
         required:true,
-        unique:true
-    }
+        unique:false
+    },
 })
 
 const Users= new mongoose.model("User", userSchema)

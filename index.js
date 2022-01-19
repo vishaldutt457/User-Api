@@ -1,7 +1,7 @@
 const express=require("express")
 const app=express();
-const router=require("./routers/route")
 require('./db/Connection')
+const router=require("./routers/route")
 
 
 app.use(express.json());

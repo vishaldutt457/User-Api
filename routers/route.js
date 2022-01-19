@@ -1,21 +1,21 @@
 const express=require("express");
-const res = require("express/lib/response");
 const Users=require("../models/user")
 
-const router = express.Router();
+const router = new express.Router();
+
 
 
 router.post("/users",async(req,res)=>{
-    try {
-        const addUser= new Users(req.body)
+    try{
+        const addingUser= new Users(req.body)
         console.log(req.body)
-        const added=await addUser.save()
-        res.status(201).send(added)
-    } catch (e) {
-        
+       const insert= addingUser.save();
+        res.status(201).send(insert)
+    }
+    catch(e){
+        res.status(400).send(e)
     }
 })
-
 
 router.get("/users",async(req,res)=>{
     try{
